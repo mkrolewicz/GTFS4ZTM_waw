@@ -190,7 +190,7 @@ def processLL(f,lines):
     trips_file = open(result_directory + '/trips.txt','w')
     routes_file.write("route_id,route_short_name,route_type\n")
     stop_times_file.write("trip_id,arrival_time,departure_time,stop_id,stop_sequence\n")
-    trips_file.write("route_id,service_id,trip_id\n")
+    trips_file.write("route_id,service_id,trip_id,trip_short_name\n")
     counter = 0 
     infolinia = ""
     for line in f:
@@ -268,7 +268,7 @@ def processWK(f,numer_lini):
                         else:
                             # nalezy dodac nowy wpis do trips
                             tid =len(trips_sums)+1 
-                            trips_file.write(numer_lini +"," + pola[2] + "," + str(tid) + "\n")
+                            trips_file.write(numer_lini +"," + pola[2] + "," + str(tid) + "," + str(pola[0].split('/')[0]) + "\n")
                             trips_sums[m.digest()] =  tid
                             
                             # zapisac rekordy w trip_tops
