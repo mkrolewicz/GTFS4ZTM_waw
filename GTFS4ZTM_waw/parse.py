@@ -120,7 +120,7 @@ def processZP(f,lines):
     global wrong_stops,result_directory,debug_directory
     wrong_stops_file = open(debug_directory + '/wrong_stops.txt','w')
     stops_file = open(result_directory + '/stops.txt','w')
-    stops_file.write("stop_id,stop_name,stop_lon,stop_lat\n")
+    stops_file.write("stop_id,stop_name,stop_lat,stop_lon\n")
     wrong_stops = dict()
     print "Parsing section ZA - stops"  
     nazwa = ''
